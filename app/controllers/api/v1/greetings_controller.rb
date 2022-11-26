@@ -1,6 +1,4 @@
-class GreetingsController < ApplicationController
-  before_action :set_greeting, only: %i[ show update destroy ]
-
+class Api::V1::GreetingsController < ApplicationController
   # GET /greetings
   # GET /greetings.json
   def index
@@ -15,7 +13,7 @@ class GreetingsController < ApplicationController
 
   # Random Greeting
   def random_greeting
-    @greeting = Greeting.all.sample.text
+    @greeting = Greeting.all.sample
     render json: @greeting 
   end
 
